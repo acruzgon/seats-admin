@@ -13,6 +13,8 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Echoing var
+        env:
+          HTTPS_PROXY: ${{ secrets.CYPRESS_HTTPS_PROXY }}
         run: echo "$HTTPS_PROXY"
       - name: Cypress run
         uses: cypress-io/github-action@v5
