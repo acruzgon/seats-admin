@@ -10,9 +10,6 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests      
       - name: Cypress run
-        env:
-          HTTPS_PROXY: http://squid.corp.redhat.com:3128
-          HTTP_PROXY: http://squid.corp.redhat.com:3128
         uses: cypress-io/github-action@v5
         with:
           env: password=${{ secrets.CYPRESS_PASSWORD }}
