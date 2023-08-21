@@ -15,7 +15,7 @@
     "lint:sass": "stylelint 'src/**/*.scss' --config .stylelintrc.json",
     "patch:hosts": "fec patch-etc-hosts",
     "start": "HOT=true fec dev",
-    "test": "jest --passWithNoTests",
+    "test": "cypress run",
     "postinstall": "rimraf .cache",
     "verify": "npm-run-all build lint test",
     "storybook": "storybook dev -p 6006",
