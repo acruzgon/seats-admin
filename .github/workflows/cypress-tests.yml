@@ -8,13 +8,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Echoing var
+      # and run all Cypress tests      
+      - name: Cypress run
         env:
           HTTPS_PROXY: http://squid.corp.redhat.com:3128
           HTTP_PROXY: http://squid.corp.redhat.com:3128
-        run: echo "$HTTPS_PROXY"
-      - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
           env: password=${{ secrets.CYPRESS_PASSWORD }}
