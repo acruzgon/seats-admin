@@ -24,7 +24,6 @@ export default defineConfig({
   e2e: {
     baseUrl: "https://console.stage.redhat.com/ansible/seats-administration",
     setupNodeEvents(on, config) {
-      return config;
     },
   },
 });

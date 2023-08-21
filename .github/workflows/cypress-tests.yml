@@ -12,6 +12,9 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        env:
+          HTTPS_PROXY: ${{ secrets.${{ secrets.CYPRESS_HTTPS_PROXY }} }}
+          HTTP_PROXY: ${{ secrets.${{ secrets.CYPRESS_HTTPS_PROXY }} }}
         with:
           env: password=${{ secrets.CYPRESS_PASSWORD }}
           config-file: cypress.config.ts
