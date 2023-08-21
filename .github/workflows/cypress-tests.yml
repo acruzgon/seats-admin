@@ -7,11 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         with:
+          config-file: cypress.config.ts
+          record: true
+          parallel: true
+          group: 'UI - Chrome'
+          install-command: yarn --immutable
+          browser: chrome
+          headless: true
           build: npm run build
           start: npm start
