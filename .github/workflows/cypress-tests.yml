@@ -1,7 +1,9 @@
 name: Cypress Tests
 
 on: [push]
-
+env:
+  HTTPS_PROXY: ${{ secrets.CYPRESS_HTTPS_PROXY }}
+  HTTP_PROXY: ${{ secrets.CYPRESS_HTTPS_PROXY }}
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -10,13 +12,12 @@ jobs:
         uses: actions/checkout@v3
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
+      - name: Echoing var
+        run: echo "$HTTPS_PROXY"
       - name: Cypress run
         uses: cypress-io/github-action@v5
-        env:
-          HTTPS_PROXY: ${{ secrets.CYPRESS_HTTPS_PROXY }}
-          HTTP_PROXY: ${{ secrets.CYPRESS_HTTPS_PROXY }}
         with:
-          env: password=${{ secrets.CYPRESS_PASSWORD }}, HTTPS_PROXY= ${{ secrets.CYPRESS_HTTPS_PROXY }}, HTTP_PROXY= ${{ secrets.CYPRESS_HTTPS_PROXY }}
+          env: password=${{ secrets.CYPRESS_PASSWORD }}
           config-file: cypress.config.ts
           build: npm run build
           start: npm start
