@@ -3,15 +3,15 @@ import { defineConfig } from "cypress";
 const fs = require("fs-extra");
 const path = require("path");
 
-function getConfigurationByFile(file) {
-  const pathToConfigFile = path.resolve("cypress/config", `${file}.env.json`);
-  // check if file exists
-  if (!fs.existsSync(pathToConfigFile)) {
-    throw new Error(`Config file ${pathToConfigFile} does not exist`);
-  }
+// function getConfigurationByFile(file) {
+//   const pathToConfigFile = path.resolve("cypress/config", `${file}.env.json`);
+//   // check if file exists
+//   if (!fs.existsSync(pathToConfigFile)) {
+//     throw new Error(`Config file ${pathToConfigFile} does not exist`);
+//   }
 
-  return fs.readJson(pathToConfigFile);
-}
+//   return fs.readJson(pathToConfigFile);
+// }
 
 export default defineConfig({
   retries: {
@@ -22,9 +22,9 @@ export default defineConfig({
   viewportWidth: 1600,
   viewportHeight: 1000,
   e2e: {
+    baseUrl: "https://console.stage.redhat.com/ansible/seats-administration",
     setupNodeEvents(on, config) {
-      const file = config.env.configFile || "stage";
-      return getConfigurationByFile(file);      
+      return config;
     },
   },
 });

@@ -13,12 +13,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
+          env: password=${{ secrets.CYPRESS_PASSWORD }}
           config-file: cypress.config.ts
-          record: true
-          parallel: true
-          group: 'UI - Chrome'
-          install-command: yarn --immutable
-          browser: chrome
-          headless: true
           build: npm run build
           start: npm start
