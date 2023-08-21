@@ -14,5 +14,6 @@ jobs:
         with:
           env: password=${{ secrets.CYPRESS_PASSWORD }}
           config-file: cypress.config.ts
+          wait-on: 'https://stage.foo.redhat.com:1337/beta/ansible/seats-administration'
           build: npm run build
           start: npm start
