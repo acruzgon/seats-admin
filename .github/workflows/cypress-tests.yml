@@ -16,7 +16,7 @@ jobs:
           HTTPS_PROXY: ${{ secrets.CYPRESS_HTTPS_PROXY }}
           HTTP_PROXY: ${{ secrets.CYPRESS_HTTPS_PROXY }}
         with:
-          env: password=${{ secrets.CYPRESS_PASSWORD }}
+          env: password=${{ secrets.CYPRESS_PASSWORD }}, HTTPS_PROXY= ${{ secrets.CYPRESS_HTTPS_PROXY }}, HTTP_PROXY= ${{ secrets.CYPRESS_HTTPS_PROXY }}
           config-file: cypress.config.ts
           build: npm run build
           start: npm start
