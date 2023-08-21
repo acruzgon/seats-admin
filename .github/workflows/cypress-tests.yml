@@ -17,3 +17,5 @@ jobs:
           wait-on: 'https://stage.foo.redhat.com:1337/beta/ansible/seats-administration'
           build: npm run build
           start: npm run start:stage:beta
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: 0
