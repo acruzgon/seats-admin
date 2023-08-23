@@ -22,7 +22,7 @@ export default defineConfig({
   viewportWidth: 1600,
   viewportHeight: 1000,
   e2e: {
-    baseUrl: "https://stage.foo.redhat.com:1337/beta/ansible/seats-administration",
+    baseUrl: "https://prod.foo.redhat.com:1337/beta/ansible/seats-administration",
     setupNodeEvents(on, config) {
     },
   },
