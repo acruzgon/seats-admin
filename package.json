@@ -15,7 +15,7 @@
     "lint:sass": "stylelint 'src/**/*.scss' --config .stylelintrc.json",
     "patch:hosts": "fec patch-etc-hosts",
     "start": "HOT=true fec dev",
-    "start:stage:beta": "HOT=true fec dev --clouddotEnv=stage --uiEnv=beta",
+    "start:stage:beta": "HOT=true fec dev --clouddotEnv=prod --uiEnv=beta",
     "test": "cypress run",
     "postinstall": "rimraf .cache",
     "verify": "npm-run-all build lint test",
