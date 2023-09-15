@@ -1,8 +1,6 @@
 name: Cypress tests
 on:
   push:
-    branches:
-      - main
   # have the ability to trigger this workflow manually
   workflow_dispatch:
 
