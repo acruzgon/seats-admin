@@ -317,7 +317,10 @@ export const UsersWithSeatTable = ({
           )}
         </ToolbarContent>
       </Toolbar>
-      <TableComposable aria-label="Ansible Lightspeed with IBM watsonx Code Assistant users">
+      <TableComposable
+        aria-label="Ansible Lightspeed with IBM watsonx Code Assistant users"
+        data-cy="users-table"
+      >
         <Thead>
           <Tr>
             <Th />
